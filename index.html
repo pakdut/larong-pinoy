@@ -3,14 +3,56 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Billiard Game</title>
-  <link rel="icon" type="image" href="img/logo.jpg">
+  <title>8-Ball Pool Game</title>
+  <!-- Favicon -->
+  <link rel="icon" type="image/jpg" href="img/logo.jpg">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>Billiard Game 🎱</h1>
-  <canvas id="gameCanvas" width="800" height="400"></canvas>
+  <div class="container">
+    <!-- Scoreboard Section -->
+    <div class="scoreboard">
+      <h1>🎱 8-Ball Pool</h1>
 
+      <div class="players">
+        <!-- Player 1 -->
+        <div id="player1" class="player active">
+          <span>Player 1 (Solids)</span>
+          <div class="score" id="score-p1">0</div>
+        </div>
+
+        <!-- Player 2 -->
+        <div id="player2" class="player">
+          <span>Player 2 (Stripes)</span>
+          <div class="score" id="score-p2">0</div>
+        </div>
+      </div>
+
+      <!-- Turn Display -->
+      <div class="turn">
+        <p id="turn-text">Player 1's Turn</p>
+      </div>
+
+      <!-- Reset Button -->
+      <button id="reset-btn">🔄 Reset Game</button>
+    </div>
+
+    <!-- Game Canvas -->
+    <canvas id="gameCanvas" width="800" height="400"></canvas>
+
+    <!-- Power Bar Section -->
+    <div class="power-container">
+      <label>Shot Power</label>
+      <div class="power-bar">
+        <div id="power-level"></div>
+      </div>
+    </div>
+
+    <!-- Message Box (Winner / Notifications) -->
+    <div id="message-box" class="message-box"></div>
+  </div>
+
+  <!-- Game Script -->
   <script src="game.js"></script>
 </body>
 </html>
